@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClInclude Include="drawproc.h" />
     <ClInclude Include="grpengine.h" />
+    <ClInclude Include="logicproc.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

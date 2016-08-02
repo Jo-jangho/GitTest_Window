@@ -14,30 +14,55 @@ void KeyProcess(int scene)
 	switch (scene)
 	{
 	case TITLE:
-		if (ch == 32)
+		if (ch == SPACEBAR)
+		{
 			sceneState = MENU;
+		}
+		if (ch == 'q')
+		{
+			exit(1);
+		}
 		break;
 	case MENU:
-		if (ch == 32)
+		if (ch == SPACEBAR)
+		{
 			sceneState = GAME;
+			InitData();
+		}
+		if (ch == 't')
+		{
+			sceneState = TUTORIAL;
+		}
+		if (ch == 'q')
+		{
+			exit(1);
+		}
+		break;
+	case TUTORIAL:
 		break;
 	case GAME:
-		if (ch == LEFTKEY)
+		if (ch == LEFTKEY || ch == 'a')
 		{
 			player.m_posx--;
 			if (player.m_posx <= 1) //경계값을 설정
 				player.m_posx = 1; //해당 경계값을 넘을 수 없도록
 		}
-		else if (ch == RIGHTKEY)
+		if (ch == RIGHTKEY || ch == 'd')
 		{
 			player.m_posx++;
-			if (player.m_posx >= (WIDTH / 2) - 2)//경계값을 설정
-				player.m_posx = (WIDTH / 2) - 2; //해당 경계값을 넘을 수 없도록
+			if (player.m_posx >= WIDTH - player.m_size)//경계값을 설정
+				player.m_posx = WIDTH - player.m_size; //해당 경계값을 넘을 수 없도록
 		}
 		break;
-	case STAGECLEAR:
-		break;
 	case STAGEOVER:
+		if (ch == SPACEBAR)
+		{
+			sceneState = TITLE;
+		}
+		if (ch == 'q')
+		{
+			exit(1);
+		}
 		break;
 	}
 }

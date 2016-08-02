@@ -3,11 +3,14 @@
 // 반복문 내부 3요소.
 // 키입력, 로직구현, 화면에 출력
 #include <stdio.h>
+#include <time.h>
+
 #include "main.h"
 #include "grpengine.h"
 
 int main(void)
 {
+	sceneState = TITLE;
 	InitData();
 
 	while (1)
@@ -15,11 +18,16 @@ int main(void)
 		//화면을지움
 		ClearScreen();
 
+		/* time */
+		curTime = clock();
+		elapsedTime = curTime - oldTime;
+		oldTime = curTime;
+
 		// 로직처리
 		KeyProcess(sceneState);
 		LogicProcess(sceneState);
 		DrawProcess(sceneState);
-		Sleeped(80);
+		Sleeped(100);
 	}
 
 	return 0;
@@ -27,40 +35,60 @@ int main(void)
 
 void InitData()
 {
-	sceneState = TITLE;
-
-	Init_val();
-
 	for (int i = 0; i < D_SIZE; i++)
 	{
-		init_creature(&circle[i], "♨", 5, 21);
+		init_creature(&circle[i], "●", 0, 0, BLUE, 1);
 		circle[i].m_isAlive = 0;
 	}
+	/* init player */
+	init_creature(&player, "===========", (WIDTH / 2) - 4, HEIGHT - 1, WHITE, 11);
 
-	init_creature(&player, "옷", 10, 24);
-
-	curTime = oldTime = clock();
+	Init_val();
 }
 
 void Init_val()
 {
-	score = 0;
 	hi_score = 0;
 	sec = 0;
 	milsec = 0;
+	curTime = oldTime = clock();
+	load_data();
 }
 
-void init_creature(Creature *cr, char* str, int posx, int posy)
+void init_creature(Creature *cr, char* str, int posx, int posy, int color, int size)
 {
 	cr->m_posx = posx;
 	cr->m_posy = posy;
 	cr->m_isAlive = 1;
 	strcpy(cr->m_shape, str);
+	cr->m_size = size;
+	cr->m_color = color;
+
+	SetScore(cr, color);
+}
+
+void SetScore(Creature *pObj, int color)
+{
+	switch (color)
+	{
+	case BLUE:
+		pObj->m_score = 50;
+		break;
+	case RED:
+		pObj->m_score = 100;
+		break;
+	case GREEN:
+		pObj->m_score = 150;
+		break;
+	default:
+		pObj->m_score = 0;
+		break;
+	}
 }
 
 void save_data()
 {
-	if (score <= hi_score)
+	if (player.m_score <= hi_score)
 	{
 		return;
 	}
@@ -72,8 +100,8 @@ void save_data()
 		return;
 	}
 
-	hi_score = score;
-	fwrite(&score, sizeof(int), 1, fp);
+	hi_score = player.m_score;
+	fwrite(&player.m_score, sizeof(int), 1, fp);
 
 	fclose(fp);
 }

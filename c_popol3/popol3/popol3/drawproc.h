@@ -4,13 +4,21 @@
 #define __DRAW_PROC_H__
 
 /* enum */
-enum { state_ready, state_play };
+extern enum{ state_ready, state_play };
 
 /* var */
-int gamestate = state_ready;
+extern int gamestate;
+extern long readycount;
 
 /* function */
 void DrawStage();
 void drawchar(Creature *cr);
+void draw_number();
+void map_box();
+void t_design();
+void Ending();
+void Tuto();
+void m_design();
+void Ball();
 
 #endif

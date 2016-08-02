@@ -41,5 +41,8 @@
     <ClInclude Include="drawproc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="logicproc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
