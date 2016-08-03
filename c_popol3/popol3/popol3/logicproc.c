@@ -123,7 +123,7 @@ void SetEnemy(Creature* pObj)
 
 	/* Set Color */
 	rnd_color = rand() % 3;
-	rnd_x = rand() % (WIDTH - 1) + 1;
+	rnd_x = rand() % (WIDTH - 2) + 2;
 	rnd_y = rand() % 20 - 20;
 
 	switch (rnd_color)

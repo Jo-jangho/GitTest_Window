@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <Windows.h>
 #include "main.h"
+#include "drawproc.h"
 
 void KeyProcess(int scene)
 {
@@ -27,6 +28,7 @@ void KeyProcess(int scene)
 		if (ch == SPACEBAR)
 		{
 			sceneState = GAME;
+			gamestate = state_ready;
 			InitData();
 		}
 		if (ch == 't')

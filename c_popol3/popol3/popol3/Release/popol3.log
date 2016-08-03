@@ -1,4 +1,4 @@
-﻿빌드 시작: 2016-08-02 오후 3:59:26
+﻿빌드 시작: 2016-08-03 오전 9:35:25
      1>2 노드의 "C:\Users\USER\Desktop\Jojangho\C\GitTest_Window\c_popol3\popol3\popol3\popol3.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt drawproc.c keyproc.c logicproc.c main.c
@@ -8,9 +8,9 @@
      1>drawproc.c(322): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\conio.h(131) : 'getch' 선언을 참조하십시오.
          keyproc.c
-     1>keyproc.c(9): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+     1>keyproc.c(10): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\conio.h(133) : 'kbhit' 선언을 참조하십시오.
-     1>keyproc.c(11): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>keyproc.c(12): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\conio.h(131) : 'getch' 선언을 참조하십시오.
          logicproc.c
      1>logicproc.c(110): warning C4013: 'srand'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
@@ -34,4 +34,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:01.35
+경과 시간: 00:00:01.24
