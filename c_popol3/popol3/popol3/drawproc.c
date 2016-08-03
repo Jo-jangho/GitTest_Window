@@ -259,7 +259,7 @@ void t_design()
 	printf("========");
 	SetColor(YELLOW);
 	gotoxy(10, 23);
-	printf("Plase, Coin Insert !!");
+	printf("Please, Coin Insert !!");
 }
 void Ending()
 {
