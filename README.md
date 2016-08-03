@@ -6,4 +6,4 @@ Left  : 'a' or '←'
 
 Right : 'd' or '→'
 
-[PPT 자료]:https://prezi.com/grvzdheb1be-/presentation/
+![error](https://github.com/Jo-jangho/GitTest_Window/blob/master/c_popol3/Resourse/Scene/title.PNG?raw=true)
